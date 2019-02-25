@@ -22,6 +22,7 @@ import org.hibernate.annotations.Nationalized;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
+import javax.persistence.Lob;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -56,8 +57,9 @@ public class UserAttributeEntity {
 
     @Column(name = "NAME")
     protected String name;
+	
     @Nationalized
-    @Column(name = "VALUE")
+    @Column(name = "VALUE", length=10485760)
     protected String value;
 
     public String getId() {
